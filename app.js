@@ -5,21 +5,26 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const {readdirSync} = require('fs');
 const EmployeeRouter = require('./routes/EmployeeRoute');
+//const mongodburi="mongodb+srv://lasyagwd:eNXHEiiEDHW1X8MN@cluster0.nsek3.mongodb.net/"
+//dotenv.config();
 
 const app = express();
 const cors = require('cors');
 app.use(bodyParser.json());
 // Connect to MongoDB
-mongoose.connect("mongodb+srv://lasyagwd:eNXHEiiEDHW1X8MN@cluster0.nsek3.mongodb.net/")
+//mongoose.connect("mongodb+srv://lasyagwd:eNXHEiiEDHW1X8MN@cluster0.nsek3.mongodb.net/")
+ mongoose.connect(process.env.ATLAS_URI)
 .then(() => console.log('MongoDB connected'))
 .catch((err) => console.error(err));
 // Routes
 
-app.use(cors({
-  origin: 'http://localhost:5173', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, 
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173', 
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true, 
+// }));
+
+app.use(cors())
 
 app.get("/", (req, res) => {
     res.send("Welcome to the API.");
