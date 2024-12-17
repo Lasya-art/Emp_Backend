@@ -13,7 +13,8 @@ const cors = require('cors');
 app.use(bodyParser.json());
 // Connect to MongoDB
 //mongoose.connect("mongodb+srv://lasyagwd:eNXHEiiEDHW1X8MN@cluster0.nsek3.mongodb.net/")
- mongoose.connect(process.env.ATLAS_URI)
+ mongoose.connect(process.env.ATLAS_URI // 30 seconds timeout
+)
 .then(() => console.log('MongoDB connected'))
 .catch((err) => console.error(err));
 // Routes
