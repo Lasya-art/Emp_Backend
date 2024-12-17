@@ -1,4 +1,4 @@
-require('dotenv').config();
+ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 //const cors = require('cors');
@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const {readdirSync} = require('fs');
 const EmployeeRouter = require('./routes/EmployeeRoute');
 //const mongodburi="mongodb+srv://lasyagwd:eNXHEiiEDHW1X8MN@cluster0.nsek3.mongodb.net/"
-//dotenv.config();
+// dotenv.config();
 
 const app = express();
 const cors = require('cors');
