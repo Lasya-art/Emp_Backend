@@ -26,6 +26,7 @@ const createEmployee = async (req, res) => {
 
 
 const getAllEmployees = async (req, res) => {
+    console.log("employee data")
     try {
         // Get page and limit from query parameters
         let { page, limit, search } = req.query;
