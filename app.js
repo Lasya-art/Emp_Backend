@@ -20,13 +20,13 @@ app.use(bodyParser.json());
 .catch((err) => console.error(err));
 // Routes
 
-app.use(cors({
-  origin: 'http://localhost:5173', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, 
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173', 
+//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//   credentials: true, 
+// }));
 
-// app.use(cors())
+ app.use(cors())
 
 app.get("/", (req, res) => {
     res.send("Welcome to the API.");

@@ -5,7 +5,7 @@ const EmployeeModel = require("../models/EmployeeModel");
 const createEmployee = async (req, res) => {
     try {
         const body = req.body;
-       
+
         const emp = new EmployeeModel(body);
 
         await emp.save();
@@ -115,7 +115,7 @@ const deleteEmployeeById = async (req, res) => {
             .json({
                 message: 'Employee Deleted',
                 success: true,
-                
+
             });
     } catch (err) {
         console.log(err);
@@ -136,10 +136,10 @@ const updateEmployeeById = async (req, res) => {
         let updateData = {
             name, email, phone, department, salary, updatedAt: new Date()
         };
-        // console.log('<-- update ---> ', req.file)
-        // if (req.file) {
-        //     updateData.profileImage = req.file.path;
-       // }
+
+
+
+        // }
         const updatedEmployee = await EmployeeModel.findByIdAndUpdate(
             id,
             updateData,
@@ -164,4 +164,5 @@ const updateEmployeeById = async (req, res) => {
 
 
 module.exports = {
-    createEmployee,getAllEmployees,getEmployeeById,deleteEmployeeById, updateEmployeeById}
+    createEmployee, getAllEmployees, getEmployeeById, deleteEmployeeById, updateEmployeeById
+}
